@@ -1,13 +1,17 @@
 /* All Common styles  */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-transform: capitalize;
 }
+
 section {
   max-width: 1040px;
   height: 100%;
   margin: 0 auto;
+  /* border: 1px solid black; */
 }
 /* header Section  style  */
 header {
@@ -56,24 +60,24 @@ header {
 
 /* My Failaurs  Section section  */
 .my-failures {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: flex-start;
   gap: 100px;
   padding: 100px 0;
 }
-.my-failures-text-box {
+.my-failures-image {
+  width: 100%;
 }
+
 .m-f-tittle-text {
-  width: 288px;
   font-weight: 700;
   font-size: 40px;
   color: #151414;
   margin-bottom: 25px;
 }
 .m-f-discreption-text {
-  width: 416px;
-
   font-weight: 400;
   font-size: 16px;
   margin-bottom: 16px;
@@ -101,7 +105,8 @@ header {
   margin-bottom: 50px;
 }
 .my-plans-items {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -127,7 +132,7 @@ header {
 /* Avoit Section Style  */
 .avoit {
   margin: 100px auto;
-  padding: 100px 50px;
+  padding: 50px;
   width: 100%;
   display: flex;
   gap: 100px;
@@ -200,13 +205,13 @@ footer {
 }
 .footer {
   padding: 130px 0;
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 100px;
   color: #ffffff;
 }
 .future {
-  max-width: 50%;
+  max-width: 100%;
 }
 .future-tittle {
   font-weight: 700;
@@ -244,7 +249,7 @@ footer {
 }
 
 .subscripe-form input {
-  width: 325px;
+  width: 100%;
   border: 1px solid #ffffff;
   border-radius: 8px;
   background: transparent;
@@ -261,4 +266,199 @@ footer {
   cursor: pointer;
   border: none;
   outline: none;
+}
+
+/* Responsive for medium Screen  */
+@media screen and (max-width: 1040px) and (min-width: 768px) {
+  section {
+    max-width: 760px;
+    padding: 20px;
+  }
+  header {
+    height: 600px;
+  }
+  .header-text-box {
+    max-width: 425px;
+    text-align: right;
+  }
+  .header-tittle-text {
+    font-size: 55px;
+  }
+  .header-discreption-text {
+    font-size: 15px;
+  }
+  .header-button {
+    font-size: 16px;
+  }
+  .my-plans-items {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 50px;
+  }
+  .my-plans-item {
+    border: 1px solid skyblue;
+    border-radius: 8px;
+    padding: 50px;
+  }
+  .footer {
+    padding: 50px 0;
+  }
+}
+
+/* Responsive for small Screen  */
+@media screen and (max-width: 768px) and (min-width: 576px) {
+  section {
+    max-width: 570px;
+    padding: 10px;
+  }
+  header {
+    height: 500px;
+  }
+  .header-text-box {
+    max-width: 325px;
+    text-align: right;
+  }
+  .header-tittle-text {
+    font-size: 45px;
+  }
+  .header-discreption-text {
+    font-size: 13px;
+  }
+  .header-button {
+    font-size: 13px;
+  }
+  .my-failures {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .my-plans-items {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .my-plans-item {
+    border: 1px solid skyblue;
+    border-radius: 8px;
+    padding: 50px;
+  }
+  .footer {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .future {
+    text-align: center;
+  }
+  .future-info {
+    align-items: center;
+  }
+  .subscripe {
+    text-align: center;
+  }
+}
+/* Responsive for Extra small Screen  */
+@media screen and (max-width: 576px) {
+  * {
+    text-align: center;
+  }
+  section {
+    width: 95%;
+    padding: 10%;
+    /* overflow: hidden; */
+  }
+  header {
+    height: auto;
+  }
+  .header-text-box {
+    max-width: 100%;
+    text-align: center;
+  }
+  .header-tittle-text {
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+  .header-button {
+    padding: 15px 20px;
+
+    font-size: 18px;
+  }
+  .my-failures {
+    grid-template-columns: 1fr;
+
+    justify-content: center;
+    gap: 50px;
+    padding: 10%;
+  }
+  .m-f-tittle-text {
+    font-size: 25px;
+  }
+  .my-plans {
+    padding: 10%;
+  }
+  .my-plans-items {
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 40px;
+  }
+  .my-plans-item {
+    width: 100%;
+    border: 1px solid skyblue;
+    border-radius: 8px;
+    padding: 10%;
+  }
+  .my-plan-tittle {
+    font-size: 20px;
+  }
+  .my-plans-item .my-plan-discreption {
+    font-size: 16px;
+  }
+  .my-plans-tittle {
+    font-size: 25px;
+  }
+  .avoit {
+    padding: 10%;
+    width: 95%;
+    margin: 10% auto;
+    background-size: cover;
+    background-position: center;
+  }
+  .avoit-item {
+    justify-content: start;
+    margin-bottom: 5px;
+  }
+  .avoite-tittle {
+    font-size: 25px;
+  }
+
+  .tagline {
+    padding: 10%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .tagline-box {
+    max-width: 100%;
+    text-align: center;
+  }
+  .tagline-tittle {
+    font-size: 25px;
+  }
+  .tagline-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  .footer {
+    padding: 10%;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .future {
+    text-align: center;
+  }
+  .future-info {
+    align-items: center;
+  }
+  .subscripe {
+    text-align: center;
+  }
 }
